@@ -53,11 +53,11 @@
 
     <div class="flex flex-col flex-1 ml-64">
 
-      <header class="h-14 bg-white border-b border-slate-100 flex items-center justify-between px-8 sticky top-0 z-10">
+      <header class="h-14 bg-white border-b border-slate-100 flex items-center justify-between px-8 sticky top-0 z-[999]">
         <div class="flex items-center gap-2">
           <span class="text-slate-300 text-xs">Director Panel</span>
           <!-- <span class="text-slate-300">/</span> -->
-          <span class="text-sm font-semibold text-slate-700 -ml-1.5 capitalize">{{ $route.path }}</span>
+          <span class="text-sm font-semibold text-slate-700 -ml-1 lowercase">{{  userPath }}</span>
         </div>
         <div class="flex items-center gap-3">
           <button class="w-8 h-8 rounded-xl bg-slate-100 flex items-center justify-center text-slate-500 border-none cursor-pointer hover:bg-slate-200 transition-all text-sm">
@@ -82,8 +82,29 @@
 </template>
 
 <script setup lang="ts">
-  const id = ref<number>(1)
+const id = ref<number>(1)
 const router = useRouter()
+const route = useRoute()
+const pathObj = ref({url1:'', url2:''})
+
+const userPath = computed(()=>{
+  if(route.path === '/director/dashboard'){
+     pathObj.value.url1 = 'director'
+     pathObj.value.url2 = 'dashboard'
+
+     return ` / ${pathObj.value.url1} / ${pathObj.value.url2}`
+  }else if(route.path === '/director/projects'){
+     pathObj.value.url1 = 'director'
+     pathObj.value.url2 = 'projects'
+
+     return ` / ${pathObj.value.url1} / ${pathObj.value.url2}`
+  }else{
+     pathObj.value.url1 = 'director'
+     pathObj.value.url2 = 'settings'
+
+     return ` / ${pathObj.value.url1} / ${pathObj.value.url2}`
+  }
+})
 
 const navItems = [
   { id: 1, label: 'Dashboard', icon: '📊', path: '/dashboard' },
@@ -99,4 +120,7 @@ function goToPage(pageNumber: number) {
   }
   id.value = pageNumber
 }
+
+ 
+
 </script>

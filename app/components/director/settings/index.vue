@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#f8f9fc] text-slate-900 overflow-scroll  w-[78.3vw] h-[90vh]   ml-8 font-sans">
+  <div class="bg-[#f8f9fc] text-slate-900  w-[78.3vw] h-[82vh]   ml-8 font-sans">
       <header>
         <DirectorSettingsHeader/>
       </header>

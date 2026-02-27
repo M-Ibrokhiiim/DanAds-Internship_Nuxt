@@ -138,6 +138,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
+
+
 const route = useRoute()
 
 const navItems = [
@@ -148,7 +150,7 @@ const navItems = [
   { href: '/student/schedules',    label: 'Schedule',    icon: '🗓️', badge: null },
   { href: '/student/messages',    label: 'Messages',    icon: '💬', badge: '2'  },
 ]
-
+console.log(typeof (navItems[0]?.icon))
 const accountItems = [
   { href: '/student/profile',  label: 'My Profile', icon: '👤' },
   { href: '/student/settings', label: 'Settings',   icon: '⚙️' },

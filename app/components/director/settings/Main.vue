@@ -1,5 +1,5 @@
 <template>
-    <div class="grid gap-5" style="grid-template-columns: 260px 1fr;">
+    <div class="grid gap-1 mt-[-15px]   " style="grid-template-columns: 260px 1fr;">
 
       <div class="flex flex-col gap-3">
         <div class="bg-white rounded-2xl border border-slate-100 p-5">
