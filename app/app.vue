@@ -6,5 +6,5 @@
   </div>
 </template>
 <script setup lang="ts">
-const layout = ref<string>('director')
+const layout = ref<string>('student')
 </script>
