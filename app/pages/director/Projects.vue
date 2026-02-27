@@ -1,3 +1,3 @@
 <template>
-  <DirectorProjectsFoundation/>
+  <DirectorProjects/>
 </template>

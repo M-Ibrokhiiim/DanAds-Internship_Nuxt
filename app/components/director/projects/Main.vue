@@ -1,48 +1,6 @@
 <template>
-  <div class=" bg-[#f8f9fc] w-[82.5vw] h-[86vh] -mt-2  overflow-scroll  text-slate-900 p-8 font-sans">
-
-    <div class="flex justify-between items-end mb-8">
-      <div>
-        <p class="text-xs text-slate-400 uppercase tracking-widest mb-1">Education Center</p>
-        <h1 class="text-[1.6rem] font-bold m-0">Projects</h1>
-      </div>
-      <div class="flex gap-3 items-center">
-        <div class="flex gap-1 bg-white border border-slate-200 rounded-xl p-1">
-          <button
-            v-for="v in ['grid', 'list']"
-            :key="v"
-            class="px-3 py-1.5 rounded-lg text-xs font-semibold border-none cursor-pointer transition-all"
-            :class="viewMode === v ? 'bg-slate-900 text-white' : 'bg-transparent text-slate-500'"
-            @click="viewMode = v"
-          >
-            {{ v === 'grid' ? '⊞ Grid' : '☰ List' }}
-          </button>
-        </div>
-        <button class="bg-indigo-500 text-white border-none px-4 py-2 rounded-xl text-sm font-semibold cursor-pointer">
-          + New Project
-        </button>
-      </div>
-    </div>
-
-    <div class="flex gap-3 mb-6 flex-wrap">
-      <button
-        v-for="f in filters"
-        :key="f.key"
-        class="px-4 py-1.5 rounded-full text-xs font-semibold border cursor-pointer transition-all"
-        :class="activeFilter === f.key
-          ? 'bg-slate-900 text-white border-slate-900'
-          : 'bg-white text-slate-500 border-slate-200 hover:border-slate-400'"
-        @click="activeFilter = f.key"
-      >
-        {{ f.label }}
-        <span
-          class="ml-1.5 px-1.5 py-0.5 rounded-full text-[0.65rem]"
-          :class="activeFilter === f.key ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-400'"
-        >{{ f.count }}</span>
-      </button>
-    </div>
-
-    <div v-if="viewMode === 'grid'" class="grid grid-cols-3 gap-5">
+    <main>
+          <div v-if="viewMode === 'grid'" class="grid grid-cols-3 gap-5">
       <div
         v-for="p in filteredProjects"
         :key="p.id"
@@ -167,52 +125,12 @@
         </div>
       </div>
     </div>
-
-    <div class="grid grid-cols-4 gap-4 mt-6">
-      <div class="bg-white rounded-2xl p-5 border border-slate-100">
-        <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1.5">Total Projects</p>
-        <p class="text-[2rem] font-extrabold font-mono leading-none mb-1">{{ projects.length }}</p>
-        <p class="text-xs text-slate-400">Across all categories</p>
-      </div>
-      <div class="bg-white rounded-2xl p-5 border border-slate-100">
-        <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1.5">Active Now</p>
-        <p class="text-[2rem] font-extrabold font-mono leading-none mb-1 text-green-500">
-          {{ projects.filter(p => p.status === 'active').length }}
-        </p>
-        <p class="text-xs text-slate-400">In progress</p>
-      </div>
-      <div class="bg-white rounded-2xl p-5 border border-slate-100">
-        <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1.5">Avg Progress</p>
-        <p class="text-[2rem] font-extrabold font-mono leading-none mb-1">{{ avgProgress }}<span class="text-lg font-semibold">%</span></p>
-        <div class="h-1.5 bg-slate-100 rounded-full overflow-hidden mt-1.5">
-          <div class="h-full rounded-full bg-linear-to-r from-indigo-500 to-sky-400" :style="{ width: avgProgress + '%' }"></div>
-        </div>
-      </div>
-      <div class="bg-white rounded-2xl p-5 border border-slate-100">
-        <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1.5">Completed</p>
-        <p class="text-[2rem] font-extrabold font-mono leading-none mb-1">
-          {{ projects.filter(p => p.status === 'completed').length }}
-        </p>
-        <p class="text-xs text-slate-400">This year</p>
-      </div>
-    </div>
-
-  </div>
+    </main>
 </template>
-
-<script setup>
-import { ref, computed } from 'vue'
-
+<script setup lang="ts">
 const viewMode    = ref('grid')
 const activeFilter = ref('all')
 
-const filters = [
-  { key: 'all',       label: 'All',       count: 8 },
-  { key: 'active',    label: 'Active',    count: 4 },
-  { key: 'planning',  label: 'Planning',  count: 2 },
-  { key: 'review',    label: 'In Review', count: 1 },
-  { key: 'completed', label: 'Completed', count: 1 },
-]
 
 const members = {
   amir:    { name: 'Amir Karimov',     initials: 'AK', color: '#6366f1' },
@@ -333,13 +251,5 @@ const projects = ref([
 const filteredProjects = computed(() => {
   if (activeFilter.value === 'all') return projects.value
   return projects.value.filter(p => p.status === activeFilter.value)
-})
-
-const avgProgress = computed(() =>
-  Math.round(projects.value.reduce((a, p) => a + p.progress, 0) / projects.value.length)
-)
-
-onMounted(()=>{
-  const router = useRouter()
 })
 </script>
