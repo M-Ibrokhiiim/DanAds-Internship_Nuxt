@@ -1,0 +1,4 @@
+<template>
+    <DirectorDashboardSectionsMainTeachers/>
+    <DirectorDashboardSectionsMainTeachersSidebar/>
+</template>
