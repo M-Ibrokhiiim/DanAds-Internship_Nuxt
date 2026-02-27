@@ -6,5 +6,7 @@
   </div>
 </template>
 <script setup lang="ts">
-const layout = ref<string>('student')
+import type { NuxtLayouts } from '#app';
+
+const layout = ref<keyof NuxtLayouts>('director')
 </script>

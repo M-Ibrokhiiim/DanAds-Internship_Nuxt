@@ -9,4 +9,11 @@ export default defineNuxtConfig({
       tailwindcss() as any,
     ],
   },
+   app: {
+    head: {
+      link: [
+        { rel: 'icon', type: 'image/png', href: '/Logo.png' }
+      ]
+    }
+  }
 });
