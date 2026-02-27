@@ -82,9 +82,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-
-const id = ref<number>(1)
+  const id = ref<number>(1)
 const router = useRouter()
 
 const navItems = [
@@ -92,8 +90,6 @@ const navItems = [
   { id: 2, label: 'Projects',  icon: '🚀', path: '/projects'  },
   { id: 3, label: 'Settings',  icon: '⚙️', path: '/settings'  },
 ]
-
-const currentPage = computed(() => navItems.find(i => i.id === id.value)?.label ?? '')
 
 function goToPage(pageNumber: number) {
   switch (pageNumber) {

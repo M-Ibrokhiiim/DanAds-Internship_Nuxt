@@ -7,5 +7,4 @@
 </template>
 <script setup lang="ts">
 const isDirector = ref<boolean>(false)
-
  </script>

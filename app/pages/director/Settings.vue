@@ -1,3 +1,3 @@
 <template>
-  <DirectorSettingsFoundation/>
+  <DirectorSettings/>
 </template>

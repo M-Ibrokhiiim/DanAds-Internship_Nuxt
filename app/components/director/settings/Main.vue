@@ -1,27 +1,4 @@
 <template>
-  <div class="bg-[#f8f9fc] text-slate-900 overflow-scroll  w-[78.3vw] h-[90vh]   ml-8 font-sans">
-
-    <div class="flex justify-between items-end mb-8">
-      <div class="mt-3">
-        <p class="text-xs text-slate-400 uppercase tracking-widest mb-1">Director Profile</p>
-        <h1 class="text-[1.6rem] font-bold m-0">Settings</h1>
-      </div>
-      <div class="flex gap-3">
-        <button
-          class="bg-white text-slate-600 border border-slate-200 px-4 py-2 rounded-xl text-sm font-medium cursor-pointer"
-          @click="resetForm"
-        >
-          Discard
-        </button>
-        <button
-          class="bg-indigo-500 text-white border-none px-4 py-2 rounded-xl text-sm font-semibold cursor-pointer"
-          @click="saveSettings"
-        >
-          Save Changes
-        </button>
-      </div>
-    </div>
-
     <div class="grid gap-5" style="grid-template-columns: 260px 1fr;">
 
       <div class="flex flex-col gap-3">
@@ -404,18 +381,9 @@
       </div>
     </div>
 
-    <div
-      v-if="toast.show"
-      class="fixed bottom-6 right-6 bg-slate-900 text-white px-5 py-3 rounded-2xl text-sm font-semibold shadow-xl flex items-center gap-2 transition-all"
-    >
-      <span>✓</span> {{ toast.message }}
-    </div>
-
-  </div>
 </template>
 
-<script setup>
-import { ref, computed } from 'vue'
+<script setup lang="ts">
 
 const activeTab = ref('profile')
 
@@ -440,8 +408,7 @@ const form = ref({
   joined:    'March 2021',
 })
 
-const originalForm = JSON.parse(JSON.stringify(form.value))
-
+ 
 const initials = computed(() =>
   (form.value.firstName[0] + form.value.lastName[0]).toUpperCase()
 )
@@ -507,14 +474,5 @@ const workingHours = ref([
   { day: 'Saturday',  open: true,  from: '10:00', to: '15:00' },
   { day: 'Sunday',    open: false, from: '09:00', to: '18:00' },
 ])
-
-const toast = ref({ show: false, message: '' })
-
-const showToast = (msg) => {
-  toast.value = { show: true, message: msg }
-  setTimeout(() => { toast.value.show = false }, 3000)
-}
-
-const saveSettings = () => showToast('Settings saved successfully')
-const resetForm    = () => { Object.assign(form.value, JSON.parse(JSON.stringify(originalForm))); showToast('Changes discarded') }
+ 
 </script>
