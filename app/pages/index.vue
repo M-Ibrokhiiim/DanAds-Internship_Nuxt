@@ -6,5 +6,6 @@
   
 </template>
 <script setup lang="ts">
-const isDirector = ref<boolean>(true)
+const isDirector = ref<boolean>(false)
+
  </script>
