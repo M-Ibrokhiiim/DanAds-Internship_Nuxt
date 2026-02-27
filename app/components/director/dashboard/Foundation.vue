@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#f8f9fc] overflow-scroll w-[84vw] h-[85vh]   text-slate-900 p-8 font-sans">
+  <div class="bg-[#f8f9fc] overflow-scroll w-[82vw] h-[85vh]   text-slate-900 p-8 font-sans">
 
     <div class="flex justify-between items-end mb-8">
       <div>
@@ -233,7 +233,9 @@
 <script setup>
 import { ref, computed } from 'vue'
 
+const router = useRouter()
 const teacherTab = ref('All')
+
 
 const currentDate = computed(() =>
   new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
@@ -272,4 +274,8 @@ const recentStudents = ref([
   { id: 4, name: 'Feruza Yoldosheva', course: 'Cybersecurity',  date: 'Feb 22', initials: 'FY', color: '#10b981' },
   { id: 5, name: 'Ulugbek Sobirov',   course: 'Mobile Dev',     date: 'Feb 21', initials: 'US', color: '#f59e0b' },
 ])
+
+onMounted(()=>{
+    router.push('/director/dashboard')
+})
 </script>

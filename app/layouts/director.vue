@@ -97,9 +97,9 @@ const currentPage = computed(() => navItems.find(i => i.id === id.value)?.label 
 
 function goToPage(pageNumber: number) {
   switch (pageNumber) {
-    case 1: router.push('/dashboard'); break
-    case 2: router.push('/projects');  break
-    case 3: router.push('/settings');  break
+    case 1: router.push('/director/dashboard'); break
+    case 2: router.push('/director/projects');  break
+    case 3: router.push('/director/settings');  break
   }
   id.value = pageNumber
 }

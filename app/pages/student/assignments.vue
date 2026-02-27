@@ -1,0 +1,3 @@
+<template>
+    <StudentAssignments/>
+</template>

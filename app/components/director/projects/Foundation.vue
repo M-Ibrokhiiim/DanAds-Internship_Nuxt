@@ -1,5 +1,5 @@
 <template>
-  <div class=" bg-[#f8f9fc] w-[83.4vw] h-[86vh] -mt-2  overflow-scroll  text-slate-900 p-8 font-sans">
+  <div class=" bg-[#f8f9fc] w-[82.5vw] h-[86vh] -mt-2  overflow-scroll  text-slate-900 p-8 font-sans">
 
     <div class="flex justify-between items-end mb-8">
       <div>
