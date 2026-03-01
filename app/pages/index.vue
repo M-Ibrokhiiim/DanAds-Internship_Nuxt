@@ -1,5 +1,9 @@
+<template>
+  <DirectorDashboard  v-if="isUser === 'director'"  />
+  <Student v-else />
+</template>
 <script setup lang="ts">
-onMounted(()=>{
-  navigateTo('/director/dashboard')
-})
+import { useUser } from '@/composables/useUser'
+
+const { isUser } = useUser()
 </script>
