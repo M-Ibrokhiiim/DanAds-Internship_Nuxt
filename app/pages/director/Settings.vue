@@ -5,4 +5,7 @@
 definePageMeta({
   layout: 'director'
 })
+useHead({
+  title:'Settings'
+})
 </script>

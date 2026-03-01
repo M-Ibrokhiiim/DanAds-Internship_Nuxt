@@ -5,4 +5,8 @@
 definePageMeta({
   layout: 'director'
 })
+
+useHead({
+  title:'Projects'
+})
 </script>

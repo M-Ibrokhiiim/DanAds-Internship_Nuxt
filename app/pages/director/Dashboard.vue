@@ -6,4 +6,8 @@ definePageMeta({
   layout: 'director'
 })
 
+useHead({
+    title:'Dashboard'
+})
+
 </script>
