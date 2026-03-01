@@ -56,7 +56,6 @@
       <header class="h-14 bg-white border-b border-slate-100 flex items-center justify-between px-8 sticky top-0 z-999">
         <div class="flex items-center gap-2">
           <span class="text-slate-300 text-xs">Director Panel</span>
-          <!-- <span class="text-slate-300">/</span> -->
           <span class="text-sm font-semibold text-slate-700 -ml-1 lowercase">{{  userPath }}</span>
         </div>
         <div class="flex items-center gap-3">
@@ -70,7 +69,6 @@
       </header>
 
       <main class="flex-1 overflow-auto">
-        <!-- <NuxtPage /> -->
          <slot/> 
       </main>
 
