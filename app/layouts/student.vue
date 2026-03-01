@@ -123,7 +123,7 @@
       </header>
 
       <main class="flex-1 overflow-auto">
-        <NuxtPage />
+        <slot/>
       </main>
 
       <footer class="h-12 bg-white border-t border-slate-100 flex items-center justify-between px-8">

@@ -13,7 +13,8 @@ export default defineNuxtConfig({
     head: {
       link: [
         { rel: 'icon', type: 'image/png', href: '/Logo.png' }
-      ]
+      ],
+      title:'CRM project of Ibrokhiiim'
     }
   }
 });

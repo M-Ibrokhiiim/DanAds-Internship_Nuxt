@@ -53,7 +53,7 @@
 
     <div class="flex flex-col flex-1 ml-64">
 
-      <header class="h-14 bg-white border-b border-slate-100 flex items-center justify-between px-8 sticky top-0 z-[999]">
+      <header class="h-14 bg-white border-b border-slate-100 flex items-center justify-between px-8 sticky top-0 z-999">
         <div class="flex items-center gap-2">
           <span class="text-slate-300 text-xs">Director Panel</span>
           <!-- <span class="text-slate-300">/</span> -->
@@ -70,7 +70,8 @@
       </header>
 
       <main class="flex-1 overflow-auto">
-        <NuxtPage />
+        <!-- <NuxtPage /> -->
+         <slot/> 
       </main>
 
       <footer class="h-12 bg-white border-t border-slate-100 flex items-center justify-center">
