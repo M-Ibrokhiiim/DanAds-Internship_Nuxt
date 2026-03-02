@@ -19,4 +19,6 @@ onMounted(()=>{
   }
   router.push('/student')
 })
+
+
 </script>
