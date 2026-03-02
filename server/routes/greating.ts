@@ -1,5 +1,7 @@
+import data from '../../server/data/products.json'
+
 export default defineEventHandler((event)=>{
     return{
-        msg:"Hello from Backend!"
+        data
     }
 })

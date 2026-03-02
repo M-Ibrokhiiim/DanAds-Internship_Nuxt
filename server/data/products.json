@@ -1,0 +1,54 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Wireless Mouse",
+      "category": "Electronics",
+      "price": 25.99,
+      "currency": "USD",
+      "inStock": true,
+      "rating": 4.5,
+      "tags": ["wireless", "computer", "accessory"]
+    },
+    {
+      "id": 2,
+      "name": "Bluetooth Headphones",
+      "category": "Electronics",
+      "price": 79.99,
+      "currency": "USD",
+      "inStock": true,
+      "rating": 4.7,
+      "tags": ["audio", "wireless", "music"]
+    },
+    {
+      "id": 3,
+      "name": "Running Shoes",
+      "category": "Sportswear",
+      "price": 59.99,
+      "currency": "USD",
+      "inStock": false,
+      "rating": 4.3,
+      "tags": ["fitness", "shoes", "outdoor"]
+    },
+    {
+      "id": 4,
+      "name": "Smart Watch",
+      "category": "Electronics",
+      "price": 199.99,
+      "currency": "USD",
+      "inStock": true,
+      "rating": 4.6,
+      "tags": ["wearable", "fitness", "gadget"]
+    },
+    {
+      "id": 5,
+      "name": "Coffee Maker",
+      "category": "Home Appliances",
+      "price": 89.99,
+      "currency": "USD",
+      "inStock": true,
+      "rating": 4.2,
+      "tags": ["kitchen", "coffee", "appliance"]
+    }
+  ]
+}
