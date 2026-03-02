@@ -6,7 +6,7 @@
       <div>
         <p class="mb-3">VeeValidate:</p>
         <div class=" flex  flex-col justify-center  border  overflow-scroll items-center rounded-xl w-[30vw] h-[30vh]">
-          <Form class="mt-2  flex  flex-col"  @submit.prevent="handleInputs" >
+          <Form class="mt-2  flex  flex-col"  @submit="handleInputs" >
             <label for="name" class="ml-2">Name:</label> 
             <Field type="text"  name="name" :rules="inputValidator" class=" border-2 border-white rounded-md ml-2 pl-2 focus:outline-none"/>
             <ErrorMessage name="name"/>
