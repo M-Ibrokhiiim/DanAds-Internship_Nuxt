@@ -1,9 +1,7 @@
-import type { NuxtLayouts } from '#app';
-
-export function useUser(){
-    const isUser = ref<keyof NuxtLayouts>('director') 
-
+ export function useUser(){
+    const isUserDirector = ref<boolean>(true)
+    
     return{
-       isUser
+       isUserDirector
     }
 }
