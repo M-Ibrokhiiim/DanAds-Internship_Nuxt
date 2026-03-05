@@ -1,9 +1,9 @@
 <template>
-  <DirectorDashboard  v-if="isUser === 'director'"  />
+  <DirectorDashboard  v-if="isUserDirector"  />
   <Student v-else />
 </template>
 <script setup lang="ts">
-import { useUser } from '@/composables/useUser'
+import { useUser  } from '@/composables/useUser'
 
-const { isUser } = useUser()
+const { isUserDirector } = useUser()
 </script>
